@@ -1,18 +1,14 @@
-name = "qwind-project"
+name name = "qwind-project"
 type = "javascript"
 
-account_id = "your-cloudflare-account-id"
+account_id = "75303e95c0cb01d345d388ddf6c7284b"
 workers_dev = true
 route = ""
 zone_id = ""
 
-[env.production]
-bucket = "./dist"
-entry_point = "./src/entry.ssr.tsx"
-
 [build]
-  command = "npm run build"
-  directory = "./dist"
+  command = "npm run build"  # Ensure the build command is correct
+  directory = "dist"  # This is the output directory where your built files will be
 
-[deploy]
-  dir = "./dist"
+[env.production]
+  pages_build_output_dir = "dist"  # This is where Cloudflare Pages looks for your build output
